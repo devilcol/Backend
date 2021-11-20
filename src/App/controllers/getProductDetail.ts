@@ -1,8 +1,7 @@
-
 import {Request, Response} from "express"
 import { Products } from "../../entity/User"
 
-class DetailController {
+class getProductDetail {
     
     async index(req: Request, res: Response) {
         const detailProduct = await Products.findOne(req.params.id)
@@ -10,4 +9,4 @@ class DetailController {
     }
 }
 
-module.exports = new DetailController
+module.exports = new getProductDetail

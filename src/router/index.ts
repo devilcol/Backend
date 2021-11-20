@@ -1,10 +1,11 @@
-
-const detailRouter = require('./detailRouter')
-const homeController =require('../App/controllers/HomeController')
+const getProductList = require('../App/controllers/getProductList')
+const getProductDetail = require('../App/controllers/getProductDetail')
 
 const route = (app) => {
-    app.use('/:id', detailRouter)
-    app.get("/", homeController.index )
+
+    app.get('/:id', getProductDetail.index)
+    app.get("/", getProductList.index )
+
 }
 
 module.exports = route

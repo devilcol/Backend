@@ -1,7 +1,7 @@
 import {Request, Response} from "express"
 import { Products } from "../../entity/User"
 
-class HomeController {
+class getProductList {
 
     async index(req: Request, res: Response) {
         const limit = req.query.limit
@@ -13,4 +13,4 @@ class HomeController {
     }
 }
 
-module.exports = new HomeController
+module.exports = new getProductList
