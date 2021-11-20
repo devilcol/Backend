@@ -1,22 +1,18 @@
-import "reflect-metadata";
-import {createConnection} from "typeorm";
-import {Products} from "./entity/User";
-import * as express from "express";
-import {Request, Response} from "express";
+import {createConnection} from "typeorm"
+import "reflect-metadata"
+import * as express from "express"
+
+const route = require('./router/index')
 
 createConnection().then(async connection => {
-    const userRepository = connection.getRepository(Products);
-
+  
+    const cors = require("cors")
     const app = express();
-    app.use(express.json());
+    app.use(cors())
+    app.use(express.json())
 
-    app.get("/", async function(req: Request, res: Response) {
-        const limit = req.query.limit
-        const offset = req.query.offset
-        const users = await userRepository.find();
-        res.json(users);
-    }
-    );
+    route(app)
     // start express server
-    app.listen(3500);
+    app.listen(3500)
 });
+
