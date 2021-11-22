@@ -2,7 +2,7 @@ import {createConnection} from "typeorm"
 import "reflect-metadata"
 import * as express from "express"
 
-const route = require('./router/index')
+const route = require('./router/index.route')
 
 createConnection().then(async connection => {
   

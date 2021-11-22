@@ -1,12 +1,10 @@
 import {Request, Response} from "express"
-import { Products } from "../../entity/User"
+import { getProductDetail as getProductDetailService } from '../service/product'
 
-class getProductDetail {
-    
-    async index(req: Request, res: Response) {
-        const detailProduct = await Products.findOne(req.params.id)
-        res.send(detailProduct)
-    }
+
+const getProductDetail = async(req: Request, res: Response) => {
+    const result = await getProductDetailService(req)
+    res.send(result)
 }
 
-module.exports = new getProductDetail
+export default getProductDetail

@@ -1,16 +1,13 @@
-import {Request, Response} from "express"
-import { Products } from "../../entity/User"
 
-class getProductList {
+import { Request, Response } from "express"
+import { getProductList as getProductListService} from "../service/product"
 
-    async index(req: Request, res: Response) {
-        const limit = req.query.limit
-        const offset = req.query.offset
-        const total = await Products.count()
-        const products = await Products.find({take : +limit,skip : +offset})
-        console.log(limit,offset,total)
-        res.send({total,products})
-    }
+const  getProductList = async(req: Request, res: Response) => {
+
+    const limit = req.query.limit
+    const offset = req.query.offset
+    const result = await getProductListService(limit, offset)
+    res.send(result)
 }
 
-module.exports = new getProductList
+export default getProductList
