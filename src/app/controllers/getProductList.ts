@@ -1,6 +1,6 @@
 
 import { Request, Response } from "express"
-import * as productService from "../service/product"
+import * as productService from "../services/product"
 
 const  getProductList = async(req: Request, res: Response) => {
 

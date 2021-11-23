@@ -1,4 +1,4 @@
-import {Products} from '../../entity/User'
+import {Products} from '../../entities/productlist'
 
 export const getProductList = async(limit: number,offset: number ) => {
 

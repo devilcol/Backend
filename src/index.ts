@@ -2,7 +2,7 @@ import {createConnection} from "typeorm"
 import "reflect-metadata"
 import * as express from "express"
 
-import getProductNamePrice from "./App/controllers/getProductNamePrice"
+import getProductNamePrice from "./app/controllers/getProductNamePrice"
 
 const route = require('./router/index.route')
 

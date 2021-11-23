@@ -1,5 +1,5 @@
 import { Response, Request} from 'express'
-import * as productService from "../service/product"
+import * as productService from "../services/product"
 
 const getProductNamePrice = async (req: Request, res: Response) => {
     const name = req.params.name
